@@ -7,16 +7,38 @@
   <!-- the classes 'page-header' and 'btn btn-dark' create bootstrap components.  -->
   <!-- Check out more components here: http://getbootstrap.com/components/ -->
   <div class="page-header">
+      <% include ../helpers/navbar.ejs %>
 
   
-    <h1>Hello World!</h1>
+    <h1>API Web App</h1>
   </div>
+  
+  <p>Click on the button to show the weather for your local city.</p>
 
-  <p>Click on the button for a surprise.</p>
+  <!-- <button onClick="getWeather()" class="btn btn-dark">Click me</button> -->
 
-  <button onClick="showPicture()" class="btn btn-dark">Click me</button>
+  <button onclick="handleSignIn()">Sign in</button>
 
-  <div id="image"></div>
+  <form onsubmit="handleMessageFormSubmit()" action="#">
+    Title:<br>
+    <input id="post-title">
+    Body:<br>
+    <textarea id="post-body"></textarea>
+    <button>Submit</button>
+  </form>
+
+  <div id="post-listing"></div>
+
+  <!-- <input class="search" type="text" placeholder="Enter city name"> -->
+  <!-- <button type="button" onclick="searchWeather()">Search</button>  -->
+
+  <div class="error-message"></div>
+
+  <!-- <div id="image"></div> -->
+
+  <div class="city"></div>
+
+  <div class="temp"></div>
   
 </body>
 
